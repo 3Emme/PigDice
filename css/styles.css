@@ -6,3 +6,12 @@
   text-align: center;
   color: goldenrod;
 }
+
+.player1-buttons {
+  display: none;
+
+}
+
+.player2-buttons {
+  display: none;
+}
