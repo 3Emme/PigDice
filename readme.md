@@ -17,11 +17,11 @@ _This is a simple webpage project to practice using constructors and prototypes 
 ### Input: Roll
 ### Output: 
 
-3. **After every dice roll, check value of current score. If value equals 0, make no adjustments to player 1 score and return out of the turn function for player 1**
+3. **After every dice roll, check value of turn score. If value is 0, make no adjustments to player 1 score and return out of the turn function for player 1**
 ### Input: Roll
 ### Output: 
 
-4. **When hold button is clicked, add the value of current score to player 1 score and return out of the turn function for player 1, hiding the player 1 button group and displaying the player 2 button group.**
+4. **When hold button is clicked, add the value of turn score to player 1 score and return out of the turn function for player 1, hiding the player 1 button group and displaying the player 2 button group.**
 ### Input: Roll
 ### Output: 
 

@@ -14,6 +14,7 @@ function Player(name, turnTotal, diceRoll, overallScore, active) {
 
 //Function to disable and enable gaming areas according to which player is active.
 function activeUser() {
+}
 
 //Funtion on what is to happen when the dice is rolled.
 Player.prototype.diceRoll = function () {
@@ -28,6 +29,8 @@ Player.prototype.diceRoll = function () {
 
 //Function on what is to happen when a player holds the game.
 Player.prototype.hold = function () {
+}
 
 //Function to reset the form input fields, re-enable the buttons, reset the scores to 0.
 function resetFields() {
+}
