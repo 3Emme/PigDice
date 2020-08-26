@@ -13,14 +13,14 @@ function Player(name) {
 Player.prototype.roll = function () {
   var randomNo = Math.floor((Math.random() * 6) + 1); 
   this.diceRoll = randomNo;
-  console.log("dice rolled!" + player1.rollTotal);
+  console.log("dice rolled!" + this.rollTotal);
 
-  // if (this.diceRoll === 1) {
-  //   this.turnTotal = 0;
-  //   alert("Sorry! You've rolled a 1...your turn is over. Pass the mouse to the next player.")
-  // } else {
-  //   this.turnTotal += this.diceroll;
-  // }
+  if (this.diceRoll === 1) {
+    this.turnTotal = 0;
+    alert("Sorry! You've rolled a 1...your turn is over. Pass the mouse to the next player.")
+  } else {
+    this.turnTotal += this.diceroll;
+  }
 
   }
 

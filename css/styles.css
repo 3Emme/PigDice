@@ -18,6 +18,7 @@
 
 #icon1 {
   width: 50%;
+  border-radius: 25px;
 }
 
 #icon2 {
@@ -48,4 +49,12 @@ h3 {
   color: rgb(31, 26, 104);
   font-weight: bold;
   font-family: courier;
+}
+
+#player1-roll {
+  margin: 10px;
+}
+
+#player2-roll {
+  margin: 10px;
 }
