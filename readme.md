@@ -9,15 +9,19 @@
 _This is a simple webpage project to practice using constructors and prototypes to populate and display an address book._
 
 ## Specs for Program Behaviors
-1. **When player1 clicks roll, dice pulls random number from 1-6.**
+1. **When player 1 clicks roll, dice pulls random number from 1-6.**
 ### Input: Roll
 ### Output: 
 
-1. **If dice value is 1, turn value of turn score to 0. If rolled dice value is greater than 1, value is added to current score**
+2. **If dice value is 1, transform value of turn score (a variable created within the scope of the turn function) to 0. If rolled dice value is greater than 1, value is added to current score**
 ### Input: Roll
 ### Output: 
 
-1. **After every dice roll, if turn score equals 0 **
+3. **After every dice roll, check value of current score. If value equals 0, make no adjustments to player 1 score and return out of the turn function for player 1**
+### Input: Roll
+### Output: 
+
+4. **When hold button is clicked, add the value of current score to player 1 score and return out of the turn function for player 1, hiding the player 1 button group and displaying the player 2 button group.**
 ### Input: Roll
 ### Output: 
 

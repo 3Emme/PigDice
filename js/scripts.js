@@ -16,8 +16,15 @@ function Player(name, turnTotal, diceRoll, overallScore, active) {
 function activeUser() {
 
 //Funtion on what is to happen when the dice is rolled.
-Player.prototype.roll = function () {
+Player.prototype.diceRoll = function () {
   var randomNo = Math.floor((Math.random() * 6) + 1); 
+  if (this.diceRoll === 1) {
+    this.turnTotal = 0;
+    alert("Sorry! You've rolled a 1...your turn is over. Pass the mouse to the next player.")
+  } else {
+    this.turnTotal += this.roll;
+  }
+  }
 
 //Function on what is to happen when a player holds the game.
 Player.prototype.hold = function () {
