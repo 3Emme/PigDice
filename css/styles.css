@@ -15,3 +15,37 @@
 .player2-buttons {
   display: none;
 }
+
+#icon1 {
+  width: 50%;
+}
+
+#icon2 {
+  width: 50%;
+}
+
+h1 {
+  font-family: courier;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: courier;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: courier;
+  font-weight: bold;
+}
+
+#playButton {
+  border-color: pink;
+  border-width: 3px;
+  margin: 20px;
+  padding: 5px;
+  background-color: skyblue;
+  color: rgb(31, 26, 104);
+  font-weight: bold;
+  font-family: courier;
+}

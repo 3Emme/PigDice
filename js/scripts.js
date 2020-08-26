@@ -1,26 +1,27 @@
 //Business Logic
 //Constructor function for a player
-function Player(name, active) {
+function Player(name) {
     this.name = name;
     this.diceRoll = 0;
     this.turnTotal = 0;
     this.overallScore = 0;
-    this.active = active;
 }
 
 //Function to disable and enable gaming areas according to which player is active.
-function activeUser() {
-}
 
 //Funtion on what is to happen when the dice is rolled.
-Player.prototype.diceRoll = function () {
+Player.prototype.roll = function () {
   var randomNo = Math.floor((Math.random() * 6) + 1); 
-  if (this.diceRoll === 1) {
-    this.turnTotal = 0;
-    alert("Sorry! You've rolled a 1...your turn is over. Pass the mouse to the next player.")
-  } else {
-    this.turnTotal += this.roll;
-  }
+  this.diceRoll = randomNo;
+  console.log("dice rolled!" + player1.rollTotal);
+
+  // if (this.diceRoll === 1) {
+  //   this.turnTotal = 0;
+  //   alert("Sorry! You've rolled a 1...your turn is over. Pass the mouse to the next player.")
+  // } else {
+  //   this.turnTotal += this.diceroll;
+  // }
+
   }
 
 //Function on what is to happen when a player holds the game.
@@ -46,8 +47,8 @@ function resetFields() {
 
 //Global Variables
 //var player1, player2;
-// let player1 = new Player (player1Name, true)
-// let player2 = new Player (player2Name, false)
+let player1 = new Player ()
+let player2 = new Player ()
 
 $(document).ready(function() {
 //function for name submission
@@ -57,12 +58,41 @@ $(document).ready(function() {
     const player2Name = $("input#player2NameInput").val();
     console.log("player1Name: " + player1Name);
     console.log("player2Name: " + player2Name);
-    player1 = new Player (player1Name, true);
-    player2 = new Player (player2Name, false);
+    player1 = new Player (player1Name);
+    player2 = new Player (player2Name);
     $("#player1NameOutput").text(player1Name);
     $("#player2NameOutput").text(player2Name);
     $("button.player1-buttons").show();
     $("#playerNameInputForm").hide();
     $("#playerNameInputForm").trigger("reset");
   });
+
+  $("#player1-roll").click(function(event) {
+    event.preventDefault();
+    let player1TurnTotalSection = $("#player1TurnTotalSection");
+    let player1RollTotalSection = $("#player1RollTotalSection");
+    //let turnTotal = player1.diceRoll();
+    //console.log("turnTotal: " + turnTotal);
+    player1.roll(Object.values(player1));
+    console.log("dice roll clicked!");
+    player1TurnTotalSection.text(player1.turnTotal);
+    player1RollTotalSection.text(player1.rollTotal);
+
+    // let contactsList = $("ul#contacts");
+    // let htmlForContactInfo = "";
+    // addressBookToDisplay.contacts.forEach(function(contact) {
+    //   htmlForContactInfo += "<li id=" + contact.id + ">" + contact.firstName + " " + contact.lastName + "</li>";
+    // });
+    // contactsList.html(htmlForContactInfo);
+
+
+
+  });
+
+  // $("button#player1-roll").click(function(event){
+  //   player1.roll = throwdice();
+  //   $("#die-roll-1").text(player1.roll);
+  //   player1.rollone();
+  //   $("#round-total-1").text(player1.tempscore);
+  // });
 });

@@ -12,8 +12,10 @@
 <body>
   <div class="start-menu container">
     <div class="jumbotron"style="background-color: black;">
+      <span id="blinkingHeadline">
       <h1>Let's play Pig Dice!</h1>
       <h3 class="newGame">New Game</h3>
+      </span>
       <form id="playerNameInputForm" class="form-group">
           <h3>Insert your names to play:</h3>
           <div class="row">
@@ -26,7 +28,7 @@
                   <input type="text" required id="player2NameInput" class="form-control">
               </section>
           </div>
-          <button type="submit" class="btn" id="playButton">Play</button>
+          <button type="submit" class="btn" id="playButton">Start Game</button>
       </form>
     </div>
   </div>
@@ -34,19 +36,21 @@
     <div class = "row">
       <div class="col-md-6">
         <h2>Player 1: <span id="player1NameOutput"></span></h2>
+        <img src="img/player1.png" id="icon1" alt="Image Icon for Player 1"><br>
           <button id="player1-roll" class="btn-success btn player1-buttons">Roll</button>
           <button id="player1-hold" class="btn-success btn player1-buttons">Hold</button>
-        <h2>Dice Roll: <span id="die-roll-1"></span></h2>
-        <h3>Round Total: <span id="round-total-1"></span></h3>
-        <h3>Total Score: <span id="total-score-1"></span></h3>
+        <h2>Dice Roll: <span id="player1RollTotalSection"></span></h2>
+        <h3>Turn Total: <span id="player1TurnTotalSection"></span></h3>
+        <h3>Overall Score: <span id="player1OverallScoreSection"></span></h3>
       </div>
       <div class="col-md-6">
         <h2>Player 2: <span id="player2NameOutput"></h2>
+        <img src="img/player2.png" id="icon2" alt="Image Icon for Player 2"><br>  
           <button id ="player2-roll" class="btn-success btn player2-buttons">Roll</button>
           <button id ="player2-hold" class="btn-success btn player2-buttons">Hold</button>
-          <h2>Dice Roll: <span id="die-roll-1"></span></h2>
-          <h3>Round Total: <span id="round-total-2"></span></h3>
-          <h3>Total Score: <span id="total-score-2"></span></h3>
+          <h2>Dice Roll: <span id="player2RollTotalSelection"></span></h2>
+          <h3>Turn Total: <span id="player2TurnTotalSection"></span></h3>
+          <h3>Overall Score: <span id="player2OverallScoreSection"></span></h3>
       </div>
     </div>
   </div>  
