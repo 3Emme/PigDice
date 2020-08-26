@@ -11,21 +11,23 @@
 </head>
 <body>
   <div class="start-menu container">
-    <div class="jumbotron">
+    <div class="jumbotron"style="background-image: url(img/banner.jfif); background-size: 100%;">
       <h1>Let's play Pig Dice!</h1>
-        <form id="player-1">
-          <div class="form-group">
-            <label for="player1Name">Player 1 Name:</label>
-            <input required class="player1Name form-control" type="text">
+      <h3 class="newGame">New Game</h3>
+      <form id="playerNames" class="form-group">
+          <h3>Insert your names to play:</h3>
+          <div class="row">
+              <section class="col-md-6">
+                  <label for="player1">Player1</label>
+                  <input type="text" required id="player1Name" class="form-control">
+              </section>
+              <section class="col-md-6">
+                  <label for="player1">Player2</label>
+                  <input type="text" required id="player2Name" class="form-control">
+              </section>
           </div>
-        </form>
-        <form id="player-2">
-          <div class="form-group">
-            <label for="player2Name">Player 2 Name:</label>
-            <input required class="player2Name form-control" type="text">
-          </div>
-        </form>
-        <button id="start" class="btn-info btn">Start</button>
+          <button type="submit" class="btn" id="playButton">Play</button>
+      </form>
     </div>
   </div>
   <div class="console container">
