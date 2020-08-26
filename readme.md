@@ -9,7 +9,7 @@
 _This is a simple webpage project to practice using constructors and prototypes to populate and display an address book._
 
 ## Specs for Program Behaviors
-1. **When player 1 clicks roll, dice pulls random number from 1-6.**
+1. **When player 1 clicks player 1 roll button, dice pulls random number from 1-6.**
 ### Input: Roll
 ### Output: 
 

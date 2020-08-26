@@ -1,9 +1,10 @@
 //Global Variables
-var player1, player2;
-let player1 = new Player (prop1, prop2, etc)
+//var player1, player2;
+let player1 = new Player ("Player 1", true)
+let player2 = new Player ("Player 2", false)
 //Business Logic
 //Constructor function for a player
-function Player(name, turnTotal, diceRoll, overallScore, active) {
+function Player(name, active) {
     this.name = name;
     this.diceRoll = 0;
     this.turnTotal = 0;
