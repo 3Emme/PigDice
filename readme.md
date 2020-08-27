@@ -6,7 +6,7 @@
 
 # Description
 
-_This is a simple webpage project to practice using constructors and prototypes to populate and display an address book._
+_This is a webpage project to practice using objects, constructors, and prototypes to create a playable Pig Dice game._
 
 ## Specs for Program Behaviors
 1.[X] **Take input from user for player 1 and player 2 names, and when submitted, append to each player's scorecard and display player 1 button group.**
