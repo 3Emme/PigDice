@@ -13,21 +13,22 @@ function Player(name) {
 Player.prototype.roll = function () {
   var randomNo = Math.floor((Math.random() * 6) + 1); 
   this.diceRoll = randomNo;
-  console.log("dice rolled!" + this.rollTotal);
-
+  console.log("dice rolled! Roll: " + this.diceRoll);
   if (this.diceRoll === 1) {
     this.turnTotal = 0;
-    alert("Sorry! You've rolled a 1...your turn is over. Pass the mouse to the next player.")
+    // alert("Sorry! You've rolled a 1...your turn is over. Pass the mouse to the next player.")
+    // hide show stuff
   } else {
-    this.turnTotal += this.diceroll;
-  }
-
+    console.log("My turn total first is: " + this.turnTotal)
+    console.log("My diceroll is: " + this.diceRoll)
+    this.turnTotal += this.diceRoll;
+    console.log("My turn total then is: " + this.turnTotal)
+    }
   }
 
 //Function on what is to happen when a player holds the game.
 // Player.prototype.hold = function () {
-//   activeUser();
-//   this.overallscore +=100 this.turnTotal;
+//   this.overallScore +=100 this.turnTotal;
 //   if (this.overallScore >=100) {
 //     alert("Game Over. You Win!!!");
 //     resetFields();
@@ -70,13 +71,37 @@ $(document).ready(function() {
   $("#player1-roll").click(function(event) {
     event.preventDefault();
     let player1TurnTotalSection = $("#player1TurnTotalSection");
-    let player1RollTotalSection = $("#player1RollTotalSection");
+    let player1DiceRollSection = $("#player1DiceRollSection");
     //let turnTotal = player1.diceRoll();
     //console.log("turnTotal: " + turnTotal);
     player1.roll(Object.values(player1));
     console.log("dice roll clicked!");
     player1TurnTotalSection.text(player1.turnTotal);
-    player1RollTotalSection.text(player1.rollTotal);
+    player1DiceRollSection.text(player1.diceRoll);
+    if (player1.turnTotal == 0){
+      alert("Sorry! You've rolled a 1...your turn is over. Pass the mouse to the next player.");
+      $("button.player1-buttons").toggle();
+      $("button.player2-buttons").toggle();
+    }
+  });
+
+    $("#player2-roll").click(function(event) {
+      event.preventDefault();
+      let player2TurnTotalSection = $("#player2TurnTotalSection");
+      let player2DiceRollSection = $("#player2DiceRollSection");
+      //let turnTotal = player1.diceRoll();
+      //console.log("turnTotal: " + turnTotal);
+      player2.roll(Object.values(player2));
+      console.log("dice roll clicked!");
+      player2TurnTotalSection.text(player2.turnTotal);
+      player2DiceRollSection.text(player2.diceRoll);
+      if (player2.turnTotal == 0){
+        alert("Sorry! You've rolled a 1...your turn is over. Pass the mouse to the next player.");
+        $("button.player2-buttons").toggle();
+        $("button.player1-buttons").toggle();
+      }  
+    });
+  });
 
     // let contactsList = $("ul#contacts");
     // let htmlForContactInfo = "";
@@ -85,14 +110,9 @@ $(document).ready(function() {
     // });
     // contactsList.html(htmlForContactInfo);
 
-
-
-  });
-
   // $("button#player1-roll").click(function(event){
   //   player1.roll = throwdice();
   //   $("#die-roll-1").text(player1.roll);
   //   player1.rollone();
   //   $("#round-total-1").text(player1.tempscore);
   // });
-});
