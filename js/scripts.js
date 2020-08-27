@@ -9,15 +9,13 @@ function Player(name) {
 
 //Function to disable and enable gaming areas according to which player is active.
 
-//Funtion on what is to happen when the dice is rolled.
+//Function on what is to happen when the dice is rolled.
 Player.prototype.roll = function () {
   var randomNo = Math.floor((Math.random() * 6) + 1); 
   this.diceRoll = randomNo;
   console.log("dice rolled! Roll: " + this.diceRoll);
   if (this.diceRoll === 1) {
     this.turnTotal = 0;
-    // alert("Sorry! You've rolled a 1...your turn is over. Pass the mouse to the next player.")
-    // hide show stuff
   } else {
     console.log("My turn total first is: " + this.turnTotal)
     console.log("My diceroll is: " + this.diceRoll)
@@ -26,25 +24,24 @@ Player.prototype.roll = function () {
     }
   }
 
-//Function on what is to happen when a player holds the game.
-// Player.prototype.hold = function () {
-//   this.overallScore +=100 this.turnTotal;
-//   if (this.overallScore >=100) {
-//     alert("Game Over. You Win!!!");
-//     resetFields();
-//     alert('To play again, click New Game')
-//   } else {
-//     return false;
-//   }
-//   console.log('if the turn total is: ' + this.turnTotal);
-//   return this.overallScore;
-// };
+// Function on what is to happen when a player holds the game.
+Player.prototype.hold = function () {
+  this.overallScore += this.turnTotal;
+  // if (this.overallScore >=100) {
+  //   alert("Game Over. You Win!!!");
+  //   resetFields();
+  //   alert('To play again, click New Game')
+  // } else {
+  //   $("button.player2-buttons").toggle();
+  //   $("button.player1-buttons").toggle();
+  // }
+};
 
 //Function to reset the form input fields, re-enable the buttons, reset the scores to 0.
 function resetFields() {
 }
 
-//User Interface Logic
+//User Interface Logic Start
 
 //Global Variables
 //var player1, player2;
@@ -101,7 +98,39 @@ $(document).ready(function() {
         $("button.player1-buttons").toggle();
       }  
     });
+
+  $("#player1-hold").click(function(event) {
+    event.preventDefault();
+    let player1OverallScoreSection = $("#player1OverallScoreSection");
+    player1.hold(Object.values(player1));
+    console.log("hold clicked!");
+    player1OverallScoreSection.text(player1.overallScore);
+    if (this.overallScore >=100) {
+      alert("Game Over. You Win!!!");
+      resetFields();
+      alert('To play again, click New Game')
+    } else {
+      $("button.player2-buttons").toggle();
+      $("button.player1-buttons").toggle();
+    }
   });
+
+  $("#player2-hold").click(function(event) {
+    event.preventDefault();
+    let player2OverallScoreSection = $("#player2OverallScoreSection");
+    player2.hold(Object.values(player1));
+    console.log("hold clicked!");
+    player2OverallScoreSection.text(player2.overallScore);
+    if (this.overallScore >=100) {
+      alert("Game Over. You Win!!!");
+      resetFields();
+      alert('To play again, click New Game')
+    } else {
+      $("button.player2-buttons").toggle();
+      $("button.player1-buttons").toggle();
+    }
+  });
+}); //User Interface Logic End
 
     // let contactsList = $("ul#contacts");
     // let htmlForContactInfo = "";

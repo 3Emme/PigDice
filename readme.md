@@ -37,7 +37,7 @@ _This is a webpage project to practice using objects, constructors, and prototyp
 ### Input: player1.overallScore = 99, *Click roll button* *roll = 5* *Click hold button*
 ### Output: player1.overallScore = 104, *alert: "Congrats, Emme won!"* display reset button *Play again!*
 
-7.[] **When reset button is clicked, page refreshes to player name entry, and values of player1 and player2 objects reset to original values.**
+8.[] **When reset button is clicked, page refreshes to player name entry, and values of player1 and player2 objects reset to original values.**
 ### Input: *Click Reset Button*
 ### Output: *page returns to original state*
 
