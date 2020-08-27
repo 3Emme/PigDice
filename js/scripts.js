@@ -30,17 +30,7 @@ Player.prototype.hold = function () {
   this.turnTotal = 0;
 };
 
-//Function to reset the form input fields, re-enable the buttons, reset the scores to 0.
-function resetFields() {
-}
-
 //User Interface Logic Start
-
-//Global Variables
-//var player1, player2;
-let player1 = new Player ()
-let player2 = new Player ()
-
 $(document).ready(function() {
 //function for name submission
   $("form#playerNameInputForm").submit(function(event) {
@@ -49,12 +39,13 @@ $(document).ready(function() {
     const player2Name = $("input#player2NameInput").val();
     console.log("player1Name: " + player1Name);
     console.log("player2Name: " + player2Name);
-    player1 = new Player (player1Name);
-    player2 = new Player (player2Name);
+    player1 = new Player (player1Name);   // Globally set variable player1
+    player2 = new Player (player2Name);   // Globally set variable player2
     $("#player1NameOutput").text(player1Name);
     $("#player2NameOutput").text(player2Name);
     $("button.player1-buttons").show();
     $("#playerNameInputForm").hide();
+    $("#newGame").show();
     $("#playerNameInputForm").trigger("reset");
   });
 
@@ -86,12 +77,12 @@ $(document).ready(function() {
 
   $("#player1-hold").click(function(event) {
     event.preventDefault();
-    let player1OverallScoreSection = $("#player1OverallScoreSection");
+    // let player1OverallScoreSection = $("#player1OverallScoreSection");
     player1.hold(Object.values(player1));
     console.log("hold clicked!");
     $("#player1TurnTotalSection").text(player1.turnTotal);
     $("#player1DiceRollSection").text(player1.diceRoll);
-    player1OverallScoreSection.text(player1.overallScore);
+    $("#player1OverallScoreSection").text(player1.overallScore);
     if (parseInt(player1.overallScore) >= 100) {
       alert("Game Over. You Win!!!");
       resetFields();
@@ -104,12 +95,12 @@ $(document).ready(function() {
 
   $("#player2-hold").click(function(event) {
     event.preventDefault();
-    let player2OverallScoreSection = $("#player2OverallScoreSection");
+    // let player2OverallScoreSection = $("#player2OverallScoreSection");
     player2.hold(Object.values(player1));
     console.log("hold clicked!");
     $("#player2TurnTotalSection").text(player2.turnTotal);
     $("#player2DiceRollSection").text(player2.diceRoll);
-    player2OverallScoreSection.text(player2.overallScore);
+    $("#player2OverallScoreSection").text(player2.overallScore);
     if (parseInt(player2.overallScore) >= 100) {
       alert("Game Over. You Win!!!");
       resetFields();
@@ -119,4 +110,27 @@ $(document).ready(function() {
       $("button.player1-buttons").toggle();
     }
   });
+  
+  //Function to reset the form input fields, re-enable the buttons, reset the scores to 0.
+  function resetFields() {
+    delete player1;
+    delete player2;
+    $("#player1NameOutput").text("");
+    $("#player2NameOutput").text("");
+    $("#player1TurnTotalSection").text("");
+    $("#player1DiceRollSection").text("");
+    $("#player2TurnTotalSection").text("");
+    $("#player2DiceRollSection").text("");
+    $("#player1OverallScoreSection").text("");
+    $("#player2OverallScoreSection").text(""); // player2.overallScore
+    $("#playerNameInputForm").show();
+    $("#newGame").hide();
+    console.log("players deleted, and game 'reset'");
+  }
+
+  $("#newGame").click(function(event) {
+    event.preventDefault();
+    resetFields();
+  });
+  
 }); 
