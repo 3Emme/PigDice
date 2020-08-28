@@ -58,3 +58,9 @@ h3 {
 #player2-roll {
   margin: 10px;
 }
+
+#newGame {
+  display:none;
+  width: 10%;
+  border-radius: 50%;
+}
